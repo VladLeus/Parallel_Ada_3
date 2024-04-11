@@ -22,7 +22,7 @@ procedure Main is
          Put_Line("Producer added item:" & I'Img);
          Items_Avalable.Release;
 
-         delay 1.5;
+         --delay 1.5;
       end loop;
    end Producer;
 
@@ -40,7 +40,7 @@ procedure Main is
          Items_Storage.Delete_First;
 
          Space_Available.Release;
-         delay 2.5;
+         --delay 2.5;
       end loop;
    end Consumer;
 
