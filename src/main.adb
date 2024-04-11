@@ -19,10 +19,10 @@ procedure Main is
       for I in 0 .. Capacity loop
          Space_Available.Seize;
          Items_Storage.Append(I);
-         Put_Line("Producer added item" & I'Img);
+         Put_Line("Producer added item:" & I'Img);
          Items_Avalable.Release;
 
-         --delay 1.5;
+         delay 1.5;
       end loop;
    end Producer;
 
@@ -34,13 +34,13 @@ procedure Main is
          declare
             Item: Integer := First_Element (Items_Storage);
          begin
-            Put_Line("Consumer deleted item: " & Item'Img);
+            Put_Line("Consumer deleted item:" & Item'Img);
          end;
 
          Items_Storage.Delete_First;
 
          Space_Available.Release;
-         --delay 2.5;
+         delay 2.5;
       end loop;
    end Consumer;
 
